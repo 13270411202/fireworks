@@ -1,11 +1,4 @@
-﻿/****************************************************************
- *																*		
- * 						      代码库							*
- *                        www.dmaku.com							*
- *       		  努力创建完善、持续更新插件以及模板			*
- * 																*
-****************************************************************/
-var canvas = document.getElementById("cas");
+﻿var canvas = document.getElementById("cas");
 var ocas = document.createElement("canvas");
 var octx = ocas.getContext("2d");
 var ctx = canvas.getContext("2d");
@@ -34,8 +27,8 @@ function animate(){
 
 	var newTime = new Date();
 	if(newTime-lastTime>500+(window.innerHeight-767)/2){
-		// var random = Math.random()*100>2?true:false;
-		var random = false;
+		var random = Math.floor(Math.random() * 10)>5?true:false;
+		// var random = false;
 		var x = getRandom(canvas.width/5 , canvas.width*4/5);
 		var y = getRandom(50 , 200);
 		if(random){
@@ -47,7 +40,6 @@ function animate(){
 			bigbooms.push(bigboom)
 		}
 		lastTime = newTime;
-		console.log(bigbooms,'===')
 	}
 
 	stars.foreach(function(){
@@ -218,7 +210,6 @@ Boom.prototype = {
 function putValue(canvas , context , ele , dr , callback){
 	context.clearRect(0,0,canvas.width,canvas.height);
 	var img = new Image();
-	console.log(ele.innerHTML);
 	if(ele.innerHTML.indexOf("img")>=0){
 		img.src = ele.getElementsByTagName("img")[0].src;
 		imgload(img , function(){
@@ -313,7 +304,6 @@ var Frag = function(centerX , centerY , radius , color ,tx , ty){
 	this.radius = radius;
 	this.color = color;
 }
-console.log("\u002f\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u000d\u000a\u0020\u002a\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u002a\u0009\u0009\u000d\u000a\u0020\u002a\u0020\u0009\u0009\u0009\u0009\u0009\u0009\u0020\u0020\u0020\u0020\u0020\u0020\u4ee3\u7801\u5e93\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u002a\u000d\u000a\u0020\u002a\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0077\u0077\u0077\u002e\u0064\u006d\u0061\u006b\u0075\u002e\u0063\u006f\u006d\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u002a\u000d\u000a\u0020\u002a\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0009\u0009\u0020\u0020\u52aa\u529b\u521b\u5efa\u5b8c\u5584\u3001\u6301\u7eed\u66f4\u65b0\u63d2\u4ef6\u4ee5\u53ca\u6a21\u677f\u0009\u0009\u0009\u002a\u000d\u000a\u0020\u002a\u0020\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u002a\u000d\u000a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002a\u002f");
 Frag.prototype = {
 	paint:function(){
 		ctx.save();
