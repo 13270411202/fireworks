@@ -9,13 +9,14 @@ var bigbooms = [];
 window.onload = function(){
 	initAnimate()
 	setInterval("toggleSound()",100);
+	toggleSound()
 }
 
 function toggleSound() {
-	   var music = document.getElementById("vd");//获取ID  
+	   var music = document.getElementById("vd");//获取ID  /
 	   if (music.paused) { //判读是否播放  
-		   music.paused=false;
-		   music.play(); //没有就播放 
+		music.paused=false;
+		music.play(); //没有就播放 
 	   }    
 }
 
@@ -36,7 +37,7 @@ function animate(){
 
 	var newTime = new Date();
 	if(newTime-lastTime>500+(window.innerHeight-767)/2){
-		var random = Math.floor(Math.random() * 10)>5?true:false;
+		var random = Math.floor(Math.random() * 10)>3?true:false;
 		// var random = false;
 		var x = getRandom(canvas.width/5 , canvas.width*4/5);
 		var y = getRandom(50 , 200);
